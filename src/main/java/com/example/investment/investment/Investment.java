@@ -17,6 +17,8 @@ public class Investment {
     private LocalDate dateOfStart;
     private LocalDate dateOfEnd;
 
+    public Investment() {}
+
     public Investment(String name, Double interest, CapitalizationPeriod capitalizationPeriod, LocalDate dateOfStart, LocalDate dateOfEnd) {
         this.name = name;
         this.interest = interest;
@@ -24,7 +26,6 @@ public class Investment {
         this.dateOfStart = dateOfStart;
         this.dateOfEnd = dateOfEnd;
     }
-
 
     public String getName() {
         return name;

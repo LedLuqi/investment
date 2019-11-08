@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class InvestmentInfo {
+public class InvestmentCalculationInfo {
 
     InvestmentCalculatorRepository investmentCalculatorRepository;
 
@@ -24,7 +24,7 @@ public class InvestmentInfo {
     String algorithm;
 
     @Autowired
-    public InvestmentInfo(InvestmentCalculatorRepository investmentCalculatorRepository) {
+    public InvestmentCalculationInfo(InvestmentCalculatorRepository investmentCalculatorRepository) {
         this.investmentCalculatorRepository = investmentCalculatorRepository;
     }
 

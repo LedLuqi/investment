@@ -1,6 +1,6 @@
 package com.example.investment.investment;
 
-import com.example.investment.investmentInfo.InvestmentInfo;
+import com.example.investment.investmentInfo.InvestmentCalculationInfo;
 import com.example.investment.ivestmentReopsitories.InvestmentCalculatorRepository;
 import com.example.investment.ivestmentReopsitories.InvestmentRepository;
 import org.hamcrest.Matchers;
@@ -20,9 +20,9 @@ public class InvestmentServiceTest {
         //given
         InvestmentCalculatorRepository investmentCalculatorRepository = mock(InvestmentCalculatorRepository.class);
         InvestmentRepository investmentRepository = mock(InvestmentRepository.class);
-        InvestmentInfo investmentInfo = new InvestmentInfo(investmentCalculatorRepository);
-        InvestmentService investmentService = new InvestmentService(investmentRepository,investmentInfo);
-        investmentService.setInvestmentRepository(investmentRepository);
+        InvestmentCalculationInfo investmentCalculationInfo = new InvestmentCalculationInfo(investmentCalculatorRepository);
+        InvestmentService investmentService = new InvestmentService(investmentRepository, investmentCalculationInfo);
+       // investmentService.setInvestmentRepository(investmentRepository);
         Investment investment = new Investment("name",5.0,CapitalizationPeriod.ELEVEN_MONTH,LocalDate.parse("2019-05-12"),LocalDate.parse("2019-12-12"));
         List <Investment> investmentList = null;
         //when
@@ -36,10 +36,10 @@ public class InvestmentServiceTest {
         //given
         InvestmentService investmentService = mock(InvestmentService.class);
         InvestmentRepository investmentRepository = mock(InvestmentRepository.class);
-        investmentService.setInvestmentRepository(investmentRepository);
+      //  investmentService.setInvestmentRepository(investmentRepository);
         List<Investment> investments = this.investmentList();
         //when
-        when(investmentService.getAllInvestments()).thenReturn(investments);
+//        when(investmentService.getAllInvestments()).thenReturn(investments);
         //then
         assertThat(investmentService.getAllInvestments(), Matchers.equalTo(investments));
 
@@ -50,7 +50,7 @@ public class InvestmentServiceTest {
         //given
         InvestmentService investmentService = mock(InvestmentService.class);
         InvestmentRepository investmentRepository = mock(InvestmentRepository.class);
-        investmentService.setInvestmentRepository(investmentRepository);
+        //investmentService.setInvestmentRepository(investmentRepository);
         List<Investment> investments = this.investmentList();
         //when
 //        Mockito.when(investmentService.getInvestmentById(any(Long.class))).thenReturn(investments.get());

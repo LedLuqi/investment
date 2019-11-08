@@ -7,17 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.hamcrest.junit.MatcherAssert.assertThat;
 
-public class InvestmentInfoTest {
+public class InvestmentCalculationInfoTest {
     @Autowired
     InvestmentCalculatorRepository investmentCalculatorRepositoryRepository;
     @Test
     public void update() {
         //given
-        InvestmentInfo investmentInfo = new InvestmentInfo(investmentCalculatorRepositoryRepository);
+        InvestmentCalculationInfo investmentCalculationInfo = new InvestmentCalculationInfo(investmentCalculatorRepositoryRepository);
         //when
-        investmentInfo.update();
+        investmentCalculationInfo.update();
         //then
-        assertThat(investmentInfo.getInvestmentCalculatorList(), Matchers.equalTo(investmentCalculatorRepositoryRepository.findAll()));
+        assertThat(investmentCalculationInfo.getInvestmentCalculatorList(), Matchers.equalTo(investmentCalculatorRepositoryRepository.findAll()));
 
     }
 }

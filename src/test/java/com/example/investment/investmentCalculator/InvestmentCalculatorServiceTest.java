@@ -3,7 +3,7 @@ package com.example.investment.investmentCalculator;
 import com.example.investment.investment.CapitalizationPeriod;
 import com.example.investment.investment.Investment;
 import com.example.investment.investment.InvestmentService;
-import com.example.investment.investmentInfo.InvestmentInfo;
+import com.example.investment.investmentInfo.InvestmentCalculationInfo;
 import com.example.investment.ivestmentReopsitories.InvestmentCalculatorRepository;
 import com.example.investment.ivestmentReopsitories.InvestmentRepository;
 import org.hamcrest.Matchers;
@@ -25,8 +25,8 @@ public class InvestmentCalculatorServiceTest {
         InvestmentCalculator investmentCalculator = new InvestmentCalculator(1000, investment);
         InvestmentCalculatorRepository investmentCalculatorRepository = mock(InvestmentCalculatorRepository.class);
         InvestmentRepository investmentRepository = mock(InvestmentRepository.class);
-        InvestmentInfo investmentInfo = new InvestmentInfo(investmentCalculatorRepository);
-        InvestmentService investmentService = new InvestmentService(investmentRepository,investmentInfo);
+        InvestmentCalculationInfo investmentCalculationInfo = new InvestmentCalculationInfo(investmentCalculatorRepository);
+        InvestmentService investmentService = new InvestmentService(investmentRepository, investmentCalculationInfo);
         InvestmentCalculatorService investmentCalculatorService = new InvestmentCalculatorService(investmentCalculatorRepository,investmentService);
         //when
        //
@@ -45,8 +45,8 @@ public class InvestmentCalculatorServiceTest {
         InvestmentCalculator investmentCalculator = new InvestmentCalculator(1000, investment);
         InvestmentCalculatorRepository investmentCalculatorRepository = mock(InvestmentCalculatorRepository.class);
         InvestmentRepository investmentRepository = mock(InvestmentRepository.class);
-        InvestmentInfo investmentInfo = new InvestmentInfo(investmentCalculatorRepository);
-        InvestmentService investmentService = new InvestmentService(investmentRepository,investmentInfo);
+        InvestmentCalculationInfo investmentCalculationInfo = new InvestmentCalculationInfo(investmentCalculatorRepository);
+        InvestmentService investmentService = new InvestmentService(investmentRepository, investmentCalculationInfo);
         InvestmentCalculatorService investmentCalculatorService = new InvestmentCalculatorService(investmentCalculatorRepository,investmentService);
         //when
         investmentCalculatorService.addCalculation(investmentCalculator);
@@ -64,8 +64,8 @@ public class InvestmentCalculatorServiceTest {
         InvestmentCalculator investmentCalculator = new InvestmentCalculator(1000, investment);
         InvestmentCalculatorRepository investmentCalculatorRepository = mock(InvestmentCalculatorRepository.class);
         InvestmentRepository investmentRepository = mock(InvestmentRepository.class);
-        InvestmentInfo investmentInfo = new InvestmentInfo(investmentCalculatorRepository);
-        InvestmentService investmentService = new InvestmentService(investmentRepository,investmentInfo);
+        InvestmentCalculationInfo investmentCalculationInfo = new InvestmentCalculationInfo(investmentCalculatorRepository);
+        InvestmentService investmentService = new InvestmentService(investmentRepository, investmentCalculationInfo);
         InvestmentCalculatorService investmentCalculatorService = new InvestmentCalculatorService(investmentCalculatorRepository,investmentService);
         //when
         investmentCalculatorService.addCalculation(investmentCalculator);
